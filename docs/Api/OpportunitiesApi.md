@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **getCharactersCharacterIdOpportunities**
-> \Swagger\Client\Model\GetCharactersCharacterIdOpportunities200Ok[] getCharactersCharacterIdOpportunities($character_id, $datasource, $if_none_match, $token)
+> object[] getCharactersCharacterIdOpportunities($character_id, $datasource, $if_none_match, $token)
 
 Get a character's completed tasks
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdOpportunities200Ok[]**](../Model/GetCharactersCharacterIdOpportunities200Ok.md)
+**object[]**
 
 ### Authorization
 
@@ -122,7 +122,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOpportunitiesGroupsGroupId**
-> \Swagger\Client\Model\GetOpportunitiesGroupsGroupIdOk getOpportunitiesGroupsGroupId($group_id, $accept_language, $datasource, $if_none_match, $language)
+> object getOpportunitiesGroupsGroupId($group_id, $accept_language, $datasource, $if_none_match, $language)
 
 Get opportunities group
 
@@ -139,10 +139,10 @@ $apiInstance = new Swagger\Client\Api\OpportunitiesApi(
     new GuzzleHttp\Client()
 );
 $group_id = 56; // int | ID of an opportunities group
-$accept_language = "en-us"; // string | Language to use in the response
+$accept_language = "en"; // string | Language to use in the response
 $datasource = "tranquility"; // string | The server name you would like data from
 $if_none_match = "if_none_match_example"; // string | ETag from a previous request. A 304 will be returned if this matches the current ETag
-$language = "en-us"; // string | Language to use in the response, takes precedence over Accept-Language
+$language = "en"; // string | Language to use in the response, takes precedence over Accept-Language
 
 try {
     $result = $apiInstance->getOpportunitiesGroupsGroupId($group_id, $accept_language, $datasource, $if_none_match, $language);
@@ -158,14 +158,14 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **int**| ID of an opportunities group |
- **accept_language** | **string**| Language to use in the response | [optional] [default to en-us]
+ **accept_language** | **string**| Language to use in the response | [optional] [default to en]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **if_none_match** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | [optional]
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en-us]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetOpportunitiesGroupsGroupIdOk**](../Model/GetOpportunitiesGroupsGroupIdOk.md)
+**object**
 
 ### Authorization
 
@@ -230,7 +230,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOpportunitiesTasksTaskId**
-> \Swagger\Client\Model\GetOpportunitiesTasksTaskIdOk getOpportunitiesTasksTaskId($task_id, $datasource, $if_none_match)
+> object getOpportunitiesTasksTaskId($task_id, $datasource, $if_none_match)
 
 Get opportunities task
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetOpportunitiesTasksTaskIdOk**](../Model/GetOpportunitiesTasksTaskIdOk.md)
+**object**
 
 ### Authorization
 

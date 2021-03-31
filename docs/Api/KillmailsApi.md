@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **getCharactersCharacterIdKillmailsRecent**
-> \Swagger\Client\Model\GetCharactersCharacterIdKillmailsRecent200Ok[] getCharactersCharacterIdKillmailsRecent($character_id, $datasource, $if_none_match, $page, $token)
+> object[] getCharactersCharacterIdKillmailsRecent($character_id, $datasource, $if_none_match, $page, $token)
 
 Get a character's recent kills and losses
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdKillmailsRecent200Ok[]**](../Model/GetCharactersCharacterIdKillmailsRecent200Ok.md)
+**object[]**
 
 ### Authorization
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCorporationsCorporationIdKillmailsRecent**
-> \Swagger\Client\Model\GetCorporationsCorporationIdKillmailsRecent200Ok[] getCorporationsCorporationIdKillmailsRecent($corporation_id, $datasource, $if_none_match, $page, $token)
+> object[] getCorporationsCorporationIdKillmailsRecent($corporation_id, $datasource, $if_none_match, $page, $token)
 
 Get a corporation's recent kills and losses
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCorporationsCorporationIdKillmailsRecent200Ok[]**](../Model/GetCorporationsCorporationIdKillmailsRecent200Ok.md)
+**object[]**
 
 ### Authorization
 
@@ -132,11 +132,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getKillmailsKillmailIdKillmailHash**
-> \Swagger\Client\Model\GetKillmailsKillmailIdKillmailHashOk getKillmailsKillmailIdKillmailHash($killmail_hash, $killmail_id, $datasource, $if_none_match)
+> object getKillmailsKillmailIdKillmailHash($killmail_hash, $killmail_id, $datasource, $if_none_match)
 
 Get a single killmail
 
-Return a single killmail from its ID and hash  --- Alternate route: `/dev/killmails/{killmail_id}/{killmail_hash}/`  Alternate route: `/legacy/killmails/{killmail_id}/{killmail_hash}/`  Alternate route: `/v1/killmails/{killmail_id}/{killmail_hash}/`  --- This route is cached for up to 1209600 seconds
+Return a single killmail from its ID and hash  --- Alternate route: `/dev/killmails/{killmail_id}/{killmail_hash}/`  Alternate route: `/legacy/killmails/{killmail_id}/{killmail_hash}/`  Alternate route: `/v1/killmails/{killmail_id}/{killmail_hash}/`  --- This route is cached for up to 30758400 seconds
 
 ### Example
 ```php
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetKillmailsKillmailIdKillmailHashOk**](../Model/GetKillmailsKillmailIdKillmailHashOk.md)
+**object**
 
 ### Authorization
 

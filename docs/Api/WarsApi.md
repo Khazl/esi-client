@@ -63,7 +63,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWarsWarId**
-> \Swagger\Client\Model\GetWarsWarIdOk getWarsWarId($war_id, $datasource, $if_none_match)
+> object getWarsWarId($war_id, $datasource, $if_none_match)
 
 Get war information
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetWarsWarIdOk**](../Model/GetWarsWarIdOk.md)
+**object**
 
 ### Authorization
 
@@ -116,7 +116,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWarsWarIdKillmails**
-> \Swagger\Client\Model\GetWarsWarIdKillmails200Ok[] getWarsWarIdKillmails($war_id, $datasource, $if_none_match, $page)
+> object[] getWarsWarIdKillmails($war_id, $datasource, $if_none_match, $page)
 
 List kills for a war
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetWarsWarIdKillmails200Ok[]**](../Model/GetWarsWarIdKillmails200Ok.md)
+**object[]**
 
 ### Authorization
 

@@ -68,7 +68,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdFittings**
-> \Swagger\Client\Model\GetCharactersCharacterIdFittings200Ok[] getCharactersCharacterIdFittings($character_id, $datasource, $if_none_match, $token)
+> object[] getCharactersCharacterIdFittings($character_id, $datasource, $if_none_match, $token)
 
 Get fittings
 
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdFittings200Ok[]**](../Model/GetCharactersCharacterIdFittings200Ok.md)
+**object[]**
 
 ### Authorization
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postCharactersCharacterIdFittings**
-> \Swagger\Client\Model\PostCharactersCharacterIdFittingsCreated postCharactersCharacterIdFittings($character_id, $fitting, $datasource, $token)
+> object postCharactersCharacterIdFittings($character_id, $fitting, $datasource, $token)
 
 Create fitting
 
@@ -148,7 +148,7 @@ $apiInstance = new Swagger\Client\Api\FittingsApi(
     $config
 );
 $character_id = 56; // int | An EVE character ID
-$fitting = new \Swagger\Client\Model\PostCharactersCharacterIdFittingsFitting(); // \Swagger\Client\Model\PostCharactersCharacterIdFittingsFitting | Details about the new fitting
+$fitting = new \Swagger\Client\Model\\Swagger\Client\Model\Fitting(); // \Swagger\Client\Model\Fitting | Details about the new fitting
 $datasource = "tranquility"; // string | The server name you would like data from
 $token = "token_example"; // string | Access token to use if unable to set a header
 
@@ -166,13 +166,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **character_id** | **int**| An EVE character ID |
- **fitting** | [**\Swagger\Client\Model\PostCharactersCharacterIdFittingsFitting**](../Model/PostCharactersCharacterIdFittingsFitting.md)| Details about the new fitting |
+ **fitting** | [**\Swagger\Client\Model\Fitting**](../Model/.md)| Details about the new fitting |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\PostCharactersCharacterIdFittingsCreated**](../Model/PostCharactersCharacterIdFittingsCreated.md)
+**object**
 
 ### Authorization
 

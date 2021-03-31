@@ -63,7 +63,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDogmaAttributesAttributeId**
-> \Swagger\Client\Model\GetDogmaAttributesAttributeIdOk getDogmaAttributesAttributeId($attribute_id, $datasource, $if_none_match)
+> object getDogmaAttributesAttributeId($attribute_id, $datasource, $if_none_match)
 
 Get attribute information
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetDogmaAttributesAttributeIdOk**](../Model/GetDogmaAttributesAttributeIdOk.md)
+**object**
 
 ### Authorization
 
@@ -116,7 +116,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDogmaDynamicItemsTypeIdItemId**
-> \Swagger\Client\Model\GetDogmaDynamicItemsTypeIdItemIdOk getDogmaDynamicItemsTypeIdItemId($item_id, $type_id, $datasource, $if_none_match)
+> object getDogmaDynamicItemsTypeIdItemId($item_id, $type_id, $datasource, $if_none_match)
 
 Get dynamic item information
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetDogmaDynamicItemsTypeIdItemIdOk**](../Model/GetDogmaDynamicItemsTypeIdItemIdOk.md)
+**object**
 
 ### Authorization
 
@@ -222,7 +222,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDogmaEffectsEffectId**
-> \Swagger\Client\Model\GetDogmaEffectsEffectIdOk getDogmaEffectsEffectId($effect_id, $datasource, $if_none_match)
+> object getDogmaEffectsEffectId($effect_id, $datasource, $if_none_match)
 
 Get effect information
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetDogmaEffectsEffectIdOk**](../Model/GetDogmaEffectsEffectIdOk.md)
+**object**
 
 ### Authorization
 

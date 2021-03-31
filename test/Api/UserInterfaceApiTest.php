@@ -1,6 +1,6 @@
 <?php
 /**
- * FactionWarfareApiTest
+ * UserInterfaceApiTest
  * PHP version 5
  *
  * @category Class
@@ -33,14 +33,14 @@ use \Swagger\Client\ApiException;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * FactionWarfareApiTest Class Doc Comment
+ * UserInterfaceApiTest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class FactionWarfareApiTest extends \PHPUnit_Framework_TestCase
+class UserInterfaceApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -72,82 +72,52 @@ class FactionWarfareApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for getCharactersCharacterIdFwStats
+     * Test case for postUiAutopilotWaypoint
      *
-     * Overview of a character involved in faction warfare.
+     * Set Autopilot Waypoint.
      *
      */
-    public function testGetCharactersCharacterIdFwStats()
+    public function testPostUiAutopilotWaypoint()
     {
     }
 
     /**
-     * Test case for getCorporationsCorporationIdFwStats
+     * Test case for postUiOpenwindowContract
      *
-     * Overview of a corporation involved in faction warfare.
+     * Open Contract Window.
      *
      */
-    public function testGetCorporationsCorporationIdFwStats()
+    public function testPostUiOpenwindowContract()
     {
     }
 
     /**
-     * Test case for getFwLeaderboards
+     * Test case for postUiOpenwindowInformation
      *
-     * List of the top factions in faction warfare.
+     * Open Information Window.
      *
      */
-    public function testGetFwLeaderboards()
+    public function testPostUiOpenwindowInformation()
     {
     }
 
     /**
-     * Test case for getFwLeaderboardsCharacters
+     * Test case for postUiOpenwindowMarketdetails
      *
-     * List of the top pilots in faction warfare.
+     * Open Market Details.
      *
      */
-    public function testGetFwLeaderboardsCharacters()
+    public function testPostUiOpenwindowMarketdetails()
     {
     }
 
     /**
-     * Test case for getFwLeaderboardsCorporations
+     * Test case for postUiOpenwindowNewmail
      *
-     * List of the top corporations in faction warfare.
-     *
-     */
-    public function testGetFwLeaderboardsCorporations()
-    {
-    }
-
-    /**
-     * Test case for getFwStats
-     *
-     * An overview of statistics about factions involved in faction warfare.
+     * Open New Mail Window.
      *
      */
-    public function testGetFwStats()
-    {
-    }
-
-    /**
-     * Test case for getFwSystems
-     *
-     * Ownership of faction warfare systems.
-     *
-     */
-    public function testGetFwSystems()
-    {
-    }
-
-    /**
-     * Test case for getFwWars
-     *
-     * Data about which NPC factions are at war.
-     *
-     */
-    public function testGetFwWars()
+    public function testPostUiOpenwindowNewmail()
     {
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * WalletApiTest
+ * SearchApiTest
  * PHP version 5
  *
  * @category Class
@@ -33,14 +33,14 @@ use \Swagger\Client\ApiException;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * WalletApiTest Class Doc Comment
+ * SearchApiTest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class WalletApiTest extends \PHPUnit_Framework_TestCase
+class SearchApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -72,62 +72,22 @@ class WalletApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for getCharactersCharacterIdWallet
+     * Test case for getCharactersCharacterIdSearch
      *
-     * Get a character's wallet balance.
+     * Search on a string.
      *
      */
-    public function testGetCharactersCharacterIdWallet()
+    public function testGetCharactersCharacterIdSearch()
     {
     }
 
     /**
-     * Test case for getCharactersCharacterIdWalletJournal
+     * Test case for getSearch
      *
-     * Get character wallet journal.
-     *
-     */
-    public function testGetCharactersCharacterIdWalletJournal()
-    {
-    }
-
-    /**
-     * Test case for getCharactersCharacterIdWalletTransactions
-     *
-     * Get wallet transactions.
+     * Search on a string.
      *
      */
-    public function testGetCharactersCharacterIdWalletTransactions()
-    {
-    }
-
-    /**
-     * Test case for getCorporationsCorporationIdWallets
-     *
-     * Returns a corporation's wallet balance.
-     *
-     */
-    public function testGetCorporationsCorporationIdWallets()
-    {
-    }
-
-    /**
-     * Test case for getCorporationsCorporationIdWalletsDivisionJournal
-     *
-     * Get corporation wallet journal.
-     *
-     */
-    public function testGetCorporationsCorporationIdWalletsDivisionJournal()
-    {
-    }
-
-    /**
-     * Test case for getCorporationsCorporationIdWalletsDivisionTransactions
-     *
-     * Get corporation wallet transactions.
-     *
-     */
-    public function testGetCorporationsCorporationIdWalletsDivisionTransactions()
+    public function testGetSearch()
     {
     }
 }

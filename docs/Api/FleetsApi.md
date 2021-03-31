@@ -195,7 +195,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdFleet**
-> \Swagger\Client\Model\GetCharactersCharacterIdFleetOk getCharactersCharacterIdFleet($character_id, $datasource, $if_none_match, $token)
+> object getCharactersCharacterIdFleet($character_id, $datasource, $if_none_match, $token)
 
 Get character fleet info
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdFleetOk**](../Model/GetCharactersCharacterIdFleetOk.md)
+**object**
 
 ### Authorization
 
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFleetsFleetId**
-> \Swagger\Client\Model\GetFleetsFleetIdOk getFleetsFleetId($fleet_id, $datasource, $if_none_match, $token)
+> object getFleetsFleetId($fleet_id, $datasource, $if_none_match, $token)
 
 Get fleet information
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetFleetsFleetIdOk**](../Model/GetFleetsFleetIdOk.md)
+**object**
 
 ### Authorization
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFleetsFleetIdMembers**
-> \Swagger\Client\Model\GetFleetsFleetIdMembers200Ok[] getFleetsFleetIdMembers($fleet_id, $accept_language, $datasource, $if_none_match, $language, $token)
+> object[] getFleetsFleetIdMembers($fleet_id, $accept_language, $datasource, $if_none_match, $language, $token)
 
 Get fleet members
 
@@ -334,10 +334,10 @@ $apiInstance = new Swagger\Client\Api\FleetsApi(
     $config
 );
 $fleet_id = 789; // int | ID for a fleet
-$accept_language = "en-us"; // string | Language to use in the response
+$accept_language = "en"; // string | Language to use in the response
 $datasource = "tranquility"; // string | The server name you would like data from
 $if_none_match = "if_none_match_example"; // string | ETag from a previous request. A 304 will be returned if this matches the current ETag
-$language = "en-us"; // string | Language to use in the response, takes precedence over Accept-Language
+$language = "en"; // string | Language to use in the response, takes precedence over Accept-Language
 $token = "token_example"; // string | Access token to use if unable to set a header
 
 try {
@@ -354,15 +354,15 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fleet_id** | **int**| ID for a fleet |
- **accept_language** | **string**| Language to use in the response | [optional] [default to en-us]
+ **accept_language** | **string**| Language to use in the response | [optional] [default to en]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **if_none_match** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | [optional]
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en-us]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en]
  **token** | **string**| Access token to use if unable to set a header | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetFleetsFleetIdMembers200Ok[]**](../Model/GetFleetsFleetIdMembers200Ok.md)
+**object[]**
 
 ### Authorization
 
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFleetsFleetIdWings**
-> \Swagger\Client\Model\GetFleetsFleetIdWings200Ok[] getFleetsFleetIdWings($fleet_id, $accept_language, $datasource, $if_none_match, $language, $token)
+> object[] getFleetsFleetIdWings($fleet_id, $accept_language, $datasource, $if_none_match, $language, $token)
 
 Get fleet wings
 
@@ -397,10 +397,10 @@ $apiInstance = new Swagger\Client\Api\FleetsApi(
     $config
 );
 $fleet_id = 789; // int | ID for a fleet
-$accept_language = "en-us"; // string | Language to use in the response
+$accept_language = "en"; // string | Language to use in the response
 $datasource = "tranquility"; // string | The server name you would like data from
 $if_none_match = "if_none_match_example"; // string | ETag from a previous request. A 304 will be returned if this matches the current ETag
-$language = "en-us"; // string | Language to use in the response, takes precedence over Accept-Language
+$language = "en"; // string | Language to use in the response, takes precedence over Accept-Language
 $token = "token_example"; // string | Access token to use if unable to set a header
 
 try {
@@ -417,15 +417,15 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fleet_id** | **int**| ID for a fleet |
- **accept_language** | **string**| Language to use in the response | [optional] [default to en-us]
+ **accept_language** | **string**| Language to use in the response | [optional] [default to en]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **if_none_match** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | [optional]
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en-us]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en]
  **token** | **string**| Access token to use if unable to set a header | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetFleetsFleetIdWings200Ok[]**](../Model/GetFleetsFleetIdWings200Ok.md)
+**object[]**
 
 ### Authorization
 
@@ -460,7 +460,7 @@ $apiInstance = new Swagger\Client\Api\FleetsApi(
     $config
 );
 $fleet_id = 789; // int | ID for a fleet
-$invitation = new \Swagger\Client\Model\PostFleetsFleetIdMembersInvitation(); // \Swagger\Client\Model\PostFleetsFleetIdMembersInvitation | Details of the invitation
+$invitation = new \Swagger\Client\Model\\Swagger\Client\Model\Invitation(); // \Swagger\Client\Model\Invitation | Details of the invitation
 $datasource = "tranquility"; // string | The server name you would like data from
 $token = "token_example"; // string | Access token to use if unable to set a header
 
@@ -477,7 +477,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fleet_id** | **int**| ID for a fleet |
- **invitation** | [**\Swagger\Client\Model\PostFleetsFleetIdMembersInvitation**](../Model/PostFleetsFleetIdMembersInvitation.md)| Details of the invitation |
+ **invitation** | [**\Swagger\Client\Model\Invitation**](../Model/.md)| Details of the invitation |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | [optional]
 
@@ -497,7 +497,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postFleetsFleetIdWings**
-> \Swagger\Client\Model\PostFleetsFleetIdWingsCreated postFleetsFleetIdWings($fleet_id, $datasource, $token)
+> object postFleetsFleetIdWings($fleet_id, $datasource, $token)
 
 Create fleet wing
 
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PostFleetsFleetIdWingsCreated**](../Model/PostFleetsFleetIdWingsCreated.md)
+**object**
 
 ### Authorization
 
@@ -554,7 +554,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postFleetsFleetIdWingsWingIdSquads**
-> \Swagger\Client\Model\PostFleetsFleetIdWingsWingIdSquadsCreated postFleetsFleetIdWingsWingIdSquads($fleet_id, $wing_id, $datasource, $token)
+> object postFleetsFleetIdWingsWingIdSquads($fleet_id, $wing_id, $datasource, $token)
 
 Create fleet squad
 
@@ -599,7 +599,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PostFleetsFleetIdWingsWingIdSquadsCreated**](../Model/PostFleetsFleetIdWingsWingIdSquadsCreated.md)
+**object**
 
 ### Authorization
 
@@ -634,7 +634,7 @@ $apiInstance = new Swagger\Client\Api\FleetsApi(
     $config
 );
 $fleet_id = 789; // int | ID for a fleet
-$new_settings = new \Swagger\Client\Model\PutFleetsFleetIdNewSettings(); // \Swagger\Client\Model\PutFleetsFleetIdNewSettings | What to update for this fleet
+$new_settings = new \Swagger\Client\Model\\Swagger\Client\Model\NewSettings(); // \Swagger\Client\Model\NewSettings | What to update for this fleet
 $datasource = "tranquility"; // string | The server name you would like data from
 $token = "token_example"; // string | Access token to use if unable to set a header
 
@@ -651,7 +651,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fleet_id** | **int**| ID for a fleet |
- **new_settings** | [**\Swagger\Client\Model\PutFleetsFleetIdNewSettings**](../Model/PutFleetsFleetIdNewSettings.md)| What to update for this fleet |
+ **new_settings** | [**\Swagger\Client\Model\NewSettings**](../Model/.md)| What to update for this fleet |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | [optional]
 
@@ -693,7 +693,7 @@ $apiInstance = new Swagger\Client\Api\FleetsApi(
 );
 $fleet_id = 789; // int | ID for a fleet
 $member_id = 56; // int | The character ID of a member in this fleet
-$movement = new \Swagger\Client\Model\PutFleetsFleetIdMembersMemberIdMovement(); // \Swagger\Client\Model\PutFleetsFleetIdMembersMemberIdMovement | Details of the invitation
+$movement = new \Swagger\Client\Model\\Swagger\Client\Model\Movement(); // \Swagger\Client\Model\Movement | Details of the invitation
 $datasource = "tranquility"; // string | The server name you would like data from
 $token = "token_example"; // string | Access token to use if unable to set a header
 
@@ -711,7 +711,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fleet_id** | **int**| ID for a fleet |
  **member_id** | **int**| The character ID of a member in this fleet |
- **movement** | [**\Swagger\Client\Model\PutFleetsFleetIdMembersMemberIdMovement**](../Model/PutFleetsFleetIdMembersMemberIdMovement.md)| Details of the invitation |
+ **movement** | [**\Swagger\Client\Model\Movement**](../Model/.md)| Details of the invitation |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | [optional]
 
@@ -752,7 +752,7 @@ $apiInstance = new Swagger\Client\Api\FleetsApi(
     $config
 );
 $fleet_id = 789; // int | ID for a fleet
-$naming = new \Swagger\Client\Model\PutFleetsFleetIdSquadsSquadIdNaming(); // \Swagger\Client\Model\PutFleetsFleetIdSquadsSquadIdNaming | New name of the squad
+$naming = new \Swagger\Client\Model\\Swagger\Client\Model\Naming(); // \Swagger\Client\Model\Naming | New name of the squad
 $squad_id = 789; // int | The squad to rename
 $datasource = "tranquility"; // string | The server name you would like data from
 $token = "token_example"; // string | Access token to use if unable to set a header
@@ -770,7 +770,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fleet_id** | **int**| ID for a fleet |
- **naming** | [**\Swagger\Client\Model\PutFleetsFleetIdSquadsSquadIdNaming**](../Model/PutFleetsFleetIdSquadsSquadIdNaming.md)| New name of the squad |
+ **naming** | [**\Swagger\Client\Model\Naming**](../Model/.md)| New name of the squad |
  **squad_id** | **int**| The squad to rename |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | [optional]
@@ -812,7 +812,7 @@ $apiInstance = new Swagger\Client\Api\FleetsApi(
     $config
 );
 $fleet_id = 789; // int | ID for a fleet
-$naming = new \Swagger\Client\Model\PutFleetsFleetIdWingsWingIdNaming(); // \Swagger\Client\Model\PutFleetsFleetIdWingsWingIdNaming | New name of the wing
+$naming = new \Swagger\Client\Model\\Swagger\Client\Model\Naming(); // \Swagger\Client\Model\Naming | New name of the wing
 $wing_id = 789; // int | The wing to rename
 $datasource = "tranquility"; // string | The server name you would like data from
 $token = "token_example"; // string | Access token to use if unable to set a header
@@ -830,7 +830,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fleet_id** | **int**| ID for a fleet |
- **naming** | [**\Swagger\Client\Model\PutFleetsFleetIdWingsWingIdNaming**](../Model/PutFleetsFleetIdWingsWingIdNaming.md)| New name of the wing |
+ **naming** | [**\Swagger\Client\Model\Naming**](../Model/.md)| New name of the wing |
  **wing_id** | **int**| The wing to rename |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | [optional]

@@ -8,11 +8,11 @@ Method | HTTP request | Description
 
 
 # **getStatus**
-> \Swagger\Client\Model\GetStatusOk getStatus($datasource, $if_none_match)
+> object getStatus($datasource, $if_none_match)
 
 Retrieve the uptime and player counts
 
-EVE Server status  --- Alternate route: `/dev/status/`  Alternate route: `/legacy/status/`  Alternate route: `/v1/status/`  --- This route is cached for up to 30 seconds
+EVE Server status  --- Alternate route: `/dev/status/`  Alternate route: `/legacy/status/`  Alternate route: `/v1/status/`  Alternate route: `/v2/status/`  --- This route is cached for up to 30 seconds
 
 ### Example
 ```php
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetStatusOk**](../Model/GetStatusOk.md)
+**object**
 
 ### Authorization
 

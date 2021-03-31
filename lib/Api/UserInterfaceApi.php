@@ -1,6 +1,6 @@
 <?php
 /**
- * PlanetaryInteractionApi
+ * UserInterfaceApi
  * PHP version 5
  *
  * @category Class
@@ -40,14 +40,14 @@ use Swagger\Client\HeaderSelector;
 use Swagger\Client\ObjectSerializer;
 
 /**
- * PlanetaryInteractionApi Class Doc Comment
+ * UserInterfaceApi Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PlanetaryInteractionApi
+class UserInterfaceApi
 {
     /**
      * @var ClientInterface
@@ -88,43 +88,44 @@ class PlanetaryInteractionApi
     }
 
     /**
-     * Operation getCharactersCharacterIdPlanets
+     * Operation postUiAutopilotWaypoint
      *
-     * Get colonies
+     * Set Autopilot Waypoint
      *
-     * @param  int $character_id An EVE character ID (required)
+     * @param  bool $add_to_beginning Whether this solar system should be added to the beginning of all waypoints (required)
+     * @param  bool $clear_other_waypoints Whether clean other waypoints beforing adding this one (required)
+     * @param  int $destination_id The destination to travel to, can be solar system, station or structure&#39;s id (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
-     * @param  string $if_none_match ETag from a previous request. A 304 will be returned if this matches the current ETag (optional)
      * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object[]
+     * @return void
      */
-    public function getCharactersCharacterIdPlanets($character_id, $datasource = 'tranquility', $if_none_match = null, $token = null)
+    public function postUiAutopilotWaypoint($add_to_beginning, $clear_other_waypoints, $destination_id, $datasource = 'tranquility', $token = null)
     {
-        list($response) = $this->getCharactersCharacterIdPlanetsWithHttpInfo($character_id, $datasource, $if_none_match, $token);
-        return $response;
+        $this->postUiAutopilotWaypointWithHttpInfo($add_to_beginning, $clear_other_waypoints, $destination_id, $datasource, $token);
     }
 
     /**
-     * Operation getCharactersCharacterIdPlanetsWithHttpInfo
+     * Operation postUiAutopilotWaypointWithHttpInfo
      *
-     * Get colonies
+     * Set Autopilot Waypoint
      *
-     * @param  int $character_id An EVE character ID (required)
+     * @param  bool $add_to_beginning Whether this solar system should be added to the beginning of all waypoints (required)
+     * @param  bool $clear_other_waypoints Whether clean other waypoints beforing adding this one (required)
+     * @param  int $destination_id The destination to travel to, can be solar system, station or structure&#39;s id (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
-     * @param  string $if_none_match ETag from a previous request. A 304 will be returned if this matches the current ETag (optional)
      * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdPlanetsWithHttpInfo($character_id, $datasource = 'tranquility', $if_none_match = null, $token = null)
+    public function postUiAutopilotWaypointWithHttpInfo($add_to_beginning, $clear_other_waypoints, $destination_id, $datasource = 'tranquility', $token = null)
     {
-        $returnType = 'object[]';
-        $request = $this->getCharactersCharacterIdPlanetsRequest($character_id, $datasource, $if_none_match, $token);
+        $returnType = '';
+        $request = $this->postUiAutopilotWaypointRequest($add_to_beginning, $clear_other_waypoints, $destination_id, $datasource, $token);
 
         try {
             $options = $this->createHttpClientOption();
@@ -154,32 +155,10 @@ class PlanetaryInteractionApi
                 );
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -242,21 +221,22 @@ class PlanetaryInteractionApi
     }
 
     /**
-     * Operation getCharactersCharacterIdPlanetsAsync
+     * Operation postUiAutopilotWaypointAsync
      *
-     * Get colonies
+     * Set Autopilot Waypoint
      *
-     * @param  int $character_id An EVE character ID (required)
+     * @param  bool $add_to_beginning Whether this solar system should be added to the beginning of all waypoints (required)
+     * @param  bool $clear_other_waypoints Whether clean other waypoints beforing adding this one (required)
+     * @param  int $destination_id The destination to travel to, can be solar system, station or structure&#39;s id (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
-     * @param  string $if_none_match ETag from a previous request. A 304 will be returned if this matches the current ETag (optional)
      * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCharactersCharacterIdPlanetsAsync($character_id, $datasource = 'tranquility', $if_none_match = null, $token = null)
+    public function postUiAutopilotWaypointAsync($add_to_beginning, $clear_other_waypoints, $destination_id, $datasource = 'tranquility', $token = null)
     {
-        return $this->getCharactersCharacterIdPlanetsAsyncWithHttpInfo($character_id, $datasource, $if_none_match, $token)
+        return $this->postUiAutopilotWaypointAsyncWithHttpInfo($add_to_beginning, $clear_other_waypoints, $destination_id, $datasource, $token)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -265,42 +245,29 @@ class PlanetaryInteractionApi
     }
 
     /**
-     * Operation getCharactersCharacterIdPlanetsAsyncWithHttpInfo
+     * Operation postUiAutopilotWaypointAsyncWithHttpInfo
      *
-     * Get colonies
+     * Set Autopilot Waypoint
      *
-     * @param  int $character_id An EVE character ID (required)
+     * @param  bool $add_to_beginning Whether this solar system should be added to the beginning of all waypoints (required)
+     * @param  bool $clear_other_waypoints Whether clean other waypoints beforing adding this one (required)
+     * @param  int $destination_id The destination to travel to, can be solar system, station or structure&#39;s id (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
-     * @param  string $if_none_match ETag from a previous request. A 304 will be returned if this matches the current ETag (optional)
      * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCharactersCharacterIdPlanetsAsyncWithHttpInfo($character_id, $datasource = 'tranquility', $if_none_match = null, $token = null)
+    public function postUiAutopilotWaypointAsyncWithHttpInfo($add_to_beginning, $clear_other_waypoints, $destination_id, $datasource = 'tranquility', $token = null)
     {
-        $returnType = 'object[]';
-        $request = $this->getCharactersCharacterIdPlanetsRequest($character_id, $datasource, $if_none_match, $token);
+        $returnType = '';
+        $request = $this->postUiAutopilotWaypointRequest($add_to_beginning, $clear_other_waypoints, $destination_id, $datasource, $token);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -320,30 +287,39 @@ class PlanetaryInteractionApi
     }
 
     /**
-     * Create request for operation 'getCharactersCharacterIdPlanets'
+     * Create request for operation 'postUiAutopilotWaypoint'
      *
-     * @param  int $character_id An EVE character ID (required)
+     * @param  bool $add_to_beginning Whether this solar system should be added to the beginning of all waypoints (required)
+     * @param  bool $clear_other_waypoints Whether clean other waypoints beforing adding this one (required)
+     * @param  int $destination_id The destination to travel to, can be solar system, station or structure&#39;s id (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
-     * @param  string $if_none_match ETag from a previous request. A 304 will be returned if this matches the current ETag (optional)
      * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getCharactersCharacterIdPlanetsRequest($character_id, $datasource = 'tranquility', $if_none_match = null, $token = null)
+    protected function postUiAutopilotWaypointRequest($add_to_beginning, $clear_other_waypoints, $destination_id, $datasource = 'tranquility', $token = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null || (is_array($character_id) && count($character_id) === 0)) {
+        // verify the required parameter 'add_to_beginning' is set
+        if ($add_to_beginning === null || (is_array($add_to_beginning) && count($add_to_beginning) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $character_id when calling getCharactersCharacterIdPlanets'
+                'Missing the required parameter $add_to_beginning when calling postUiAutopilotWaypoint'
             );
         }
-        if ($character_id < 1) {
-            throw new \InvalidArgumentException('invalid value for "$character_id" when calling PlanetaryInteractionApi.getCharactersCharacterIdPlanets, must be bigger than or equal to 1.');
+        // verify the required parameter 'clear_other_waypoints' is set
+        if ($clear_other_waypoints === null || (is_array($clear_other_waypoints) && count($clear_other_waypoints) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $clear_other_waypoints when calling postUiAutopilotWaypoint'
+            );
+        }
+        // verify the required parameter 'destination_id' is set
+        if ($destination_id === null || (is_array($destination_id) && count($destination_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $destination_id when calling postUiAutopilotWaypoint'
+            );
         }
 
-
-        $resourcePath = '/characters/{character_id}/planets/';
+        $resourcePath = '/ui/autopilot/waypoint/';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -351,26 +327,26 @@ class PlanetaryInteractionApi
         $multipart = false;
 
         // query params
+        if ($add_to_beginning !== null) {
+            $queryParams['add_to_beginning'] = ObjectSerializer::toQueryValue($add_to_beginning);
+        }
+        // query params
+        if ($clear_other_waypoints !== null) {
+            $queryParams['clear_other_waypoints'] = ObjectSerializer::toQueryValue($clear_other_waypoints);
+        }
+        // query params
         if ($datasource !== null) {
             $queryParams['datasource'] = ObjectSerializer::toQueryValue($datasource);
+        }
+        // query params
+        if ($destination_id !== null) {
+            $queryParams['destination_id'] = ObjectSerializer::toQueryValue($destination_id);
         }
         // query params
         if ($token !== null) {
             $queryParams['token'] = ObjectSerializer::toQueryValue($token);
         }
-        // header params
-        if ($if_none_match !== null) {
-            $headerParams['If-None-Match'] = ObjectSerializer::toHeaderValue($if_none_match);
-        }
 
-        // path params
-        if ($character_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'character_id' . '}',
-                ObjectSerializer::toPathValue($character_id),
-                $resourcePath
-            );
-        }
 
         // body params
         $_tempBody = null;
@@ -440,7 +416,7 @@ class PlanetaryInteractionApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'GET',
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -448,43 +424,40 @@ class PlanetaryInteractionApi
     }
 
     /**
-     * Operation getCharactersCharacterIdPlanetsPlanetId
+     * Operation postUiOpenwindowContract
      *
-     * Get colony layout
+     * Open Contract Window
      *
-     * @param  int $character_id An EVE character ID (required)
-     * @param  int $planet_id Planet id of the target planet (required)
+     * @param  int $contract_id The contract to open (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
      * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object
+     * @return void
      */
-    public function getCharactersCharacterIdPlanetsPlanetId($character_id, $planet_id, $datasource = 'tranquility', $token = null)
+    public function postUiOpenwindowContract($contract_id, $datasource = 'tranquility', $token = null)
     {
-        list($response) = $this->getCharactersCharacterIdPlanetsPlanetIdWithHttpInfo($character_id, $planet_id, $datasource, $token);
-        return $response;
+        $this->postUiOpenwindowContractWithHttpInfo($contract_id, $datasource, $token);
     }
 
     /**
-     * Operation getCharactersCharacterIdPlanetsPlanetIdWithHttpInfo
+     * Operation postUiOpenwindowContractWithHttpInfo
      *
-     * Get colony layout
+     * Open Contract Window
      *
-     * @param  int $character_id An EVE character ID (required)
-     * @param  int $planet_id Planet id of the target planet (required)
+     * @param  int $contract_id The contract to open (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
      * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdPlanetsPlanetIdWithHttpInfo($character_id, $planet_id, $datasource = 'tranquility', $token = null)
+    public function postUiOpenwindowContractWithHttpInfo($contract_id, $datasource = 'tranquility', $token = null)
     {
-        $returnType = 'object';
-        $request = $this->getCharactersCharacterIdPlanetsPlanetIdRequest($character_id, $planet_id, $datasource, $token);
+        $returnType = '';
+        $request = $this->postUiOpenwindowContractRequest($contract_id, $datasource, $token);
 
         try {
             $options = $this->createHttpClientOption();
@@ -514,32 +487,10 @@ class PlanetaryInteractionApi
                 );
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -560,14 +511,6 @@ class PlanetaryInteractionApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Swagger\Client\Model\Forbidden',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -610,21 +553,20 @@ class PlanetaryInteractionApi
     }
 
     /**
-     * Operation getCharactersCharacterIdPlanetsPlanetIdAsync
+     * Operation postUiOpenwindowContractAsync
      *
-     * Get colony layout
+     * Open Contract Window
      *
-     * @param  int $character_id An EVE character ID (required)
-     * @param  int $planet_id Planet id of the target planet (required)
+     * @param  int $contract_id The contract to open (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
      * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCharactersCharacterIdPlanetsPlanetIdAsync($character_id, $planet_id, $datasource = 'tranquility', $token = null)
+    public function postUiOpenwindowContractAsync($contract_id, $datasource = 'tranquility', $token = null)
     {
-        return $this->getCharactersCharacterIdPlanetsPlanetIdAsyncWithHttpInfo($character_id, $planet_id, $datasource, $token)
+        return $this->postUiOpenwindowContractAsyncWithHttpInfo($contract_id, $datasource, $token)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -633,42 +575,27 @@ class PlanetaryInteractionApi
     }
 
     /**
-     * Operation getCharactersCharacterIdPlanetsPlanetIdAsyncWithHttpInfo
+     * Operation postUiOpenwindowContractAsyncWithHttpInfo
      *
-     * Get colony layout
+     * Open Contract Window
      *
-     * @param  int $character_id An EVE character ID (required)
-     * @param  int $planet_id Planet id of the target planet (required)
+     * @param  int $contract_id The contract to open (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
      * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCharactersCharacterIdPlanetsPlanetIdAsyncWithHttpInfo($character_id, $planet_id, $datasource = 'tranquility', $token = null)
+    public function postUiOpenwindowContractAsyncWithHttpInfo($contract_id, $datasource = 'tranquility', $token = null)
     {
-        $returnType = 'object';
-        $request = $this->getCharactersCharacterIdPlanetsPlanetIdRequest($character_id, $planet_id, $datasource, $token);
+        $returnType = '';
+        $request = $this->postUiOpenwindowContractRequest($contract_id, $datasource, $token);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -688,42 +615,35 @@ class PlanetaryInteractionApi
     }
 
     /**
-     * Create request for operation 'getCharactersCharacterIdPlanetsPlanetId'
+     * Create request for operation 'postUiOpenwindowContract'
      *
-     * @param  int $character_id An EVE character ID (required)
-     * @param  int $planet_id Planet id of the target planet (required)
+     * @param  int $contract_id The contract to open (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
      * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getCharactersCharacterIdPlanetsPlanetIdRequest($character_id, $planet_id, $datasource = 'tranquility', $token = null)
+    protected function postUiOpenwindowContractRequest($contract_id, $datasource = 'tranquility', $token = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null || (is_array($character_id) && count($character_id) === 0)) {
+        // verify the required parameter 'contract_id' is set
+        if ($contract_id === null || (is_array($contract_id) && count($contract_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $character_id when calling getCharactersCharacterIdPlanetsPlanetId'
-            );
-        }
-        if ($character_id < 1) {
-            throw new \InvalidArgumentException('invalid value for "$character_id" when calling PlanetaryInteractionApi.getCharactersCharacterIdPlanetsPlanetId, must be bigger than or equal to 1.');
-        }
-
-        // verify the required parameter 'planet_id' is set
-        if ($planet_id === null || (is_array($planet_id) && count($planet_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $planet_id when calling getCharactersCharacterIdPlanetsPlanetId'
+                'Missing the required parameter $contract_id when calling postUiOpenwindowContract'
             );
         }
 
-        $resourcePath = '/characters/{character_id}/planets/{planet_id}/';
+        $resourcePath = '/ui/openwindow/contract/';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($contract_id !== null) {
+            $queryParams['contract_id'] = ObjectSerializer::toQueryValue($contract_id);
+        }
         // query params
         if ($datasource !== null) {
             $queryParams['datasource'] = ObjectSerializer::toQueryValue($datasource);
@@ -733,22 +653,6 @@ class PlanetaryInteractionApi
             $queryParams['token'] = ObjectSerializer::toQueryValue($token);
         }
 
-        // path params
-        if ($character_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'character_id' . '}',
-                ObjectSerializer::toPathValue($character_id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($planet_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'planet_id' . '}',
-                ObjectSerializer::toPathValue($planet_id),
-                $resourcePath
-            );
-        }
 
         // body params
         $_tempBody = null;
@@ -818,7 +722,7 @@ class PlanetaryInteractionApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'GET',
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -826,45 +730,40 @@ class PlanetaryInteractionApi
     }
 
     /**
-     * Operation getCorporationsCorporationIdCustomsOffices
+     * Operation postUiOpenwindowInformation
      *
-     * List corporation customs offices
+     * Open Information Window
      *
-     * @param  int $corporation_id An EVE corporation ID (required)
+     * @param  int $target_id The target to open (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
-     * @param  string $if_none_match ETag from a previous request. A 304 will be returned if this matches the current ETag (optional)
-     * @param  int $page Which page of results to return (optional, default to 1)
      * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object[]
+     * @return void
      */
-    public function getCorporationsCorporationIdCustomsOffices($corporation_id, $datasource = 'tranquility', $if_none_match = null, $page = '1', $token = null)
+    public function postUiOpenwindowInformation($target_id, $datasource = 'tranquility', $token = null)
     {
-        list($response) = $this->getCorporationsCorporationIdCustomsOfficesWithHttpInfo($corporation_id, $datasource, $if_none_match, $page, $token);
-        return $response;
+        $this->postUiOpenwindowInformationWithHttpInfo($target_id, $datasource, $token);
     }
 
     /**
-     * Operation getCorporationsCorporationIdCustomsOfficesWithHttpInfo
+     * Operation postUiOpenwindowInformationWithHttpInfo
      *
-     * List corporation customs offices
+     * Open Information Window
      *
-     * @param  int $corporation_id An EVE corporation ID (required)
+     * @param  int $target_id The target to open (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
-     * @param  string $if_none_match ETag from a previous request. A 304 will be returned if this matches the current ETag (optional)
-     * @param  int $page Which page of results to return (optional, default to 1)
      * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCorporationsCorporationIdCustomsOfficesWithHttpInfo($corporation_id, $datasource = 'tranquility', $if_none_match = null, $page = '1', $token = null)
+    public function postUiOpenwindowInformationWithHttpInfo($target_id, $datasource = 'tranquility', $token = null)
     {
-        $returnType = 'object[]';
-        $request = $this->getCorporationsCorporationIdCustomsOfficesRequest($corporation_id, $datasource, $if_none_match, $page, $token);
+        $returnType = '';
+        $request = $this->postUiOpenwindowInformationRequest($target_id, $datasource, $token);
 
         try {
             $options = $this->createHttpClientOption();
@@ -894,32 +793,10 @@ class PlanetaryInteractionApi
                 );
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -982,22 +859,20 @@ class PlanetaryInteractionApi
     }
 
     /**
-     * Operation getCorporationsCorporationIdCustomsOfficesAsync
+     * Operation postUiOpenwindowInformationAsync
      *
-     * List corporation customs offices
+     * Open Information Window
      *
-     * @param  int $corporation_id An EVE corporation ID (required)
+     * @param  int $target_id The target to open (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
-     * @param  string $if_none_match ETag from a previous request. A 304 will be returned if this matches the current ETag (optional)
-     * @param  int $page Which page of results to return (optional, default to 1)
      * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCorporationsCorporationIdCustomsOfficesAsync($corporation_id, $datasource = 'tranquility', $if_none_match = null, $page = '1', $token = null)
+    public function postUiOpenwindowInformationAsync($target_id, $datasource = 'tranquility', $token = null)
     {
-        return $this->getCorporationsCorporationIdCustomsOfficesAsyncWithHttpInfo($corporation_id, $datasource, $if_none_match, $page, $token)
+        return $this->postUiOpenwindowInformationAsyncWithHttpInfo($target_id, $datasource, $token)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1006,43 +881,27 @@ class PlanetaryInteractionApi
     }
 
     /**
-     * Operation getCorporationsCorporationIdCustomsOfficesAsyncWithHttpInfo
+     * Operation postUiOpenwindowInformationAsyncWithHttpInfo
      *
-     * List corporation customs offices
+     * Open Information Window
      *
-     * @param  int $corporation_id An EVE corporation ID (required)
+     * @param  int $target_id The target to open (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
-     * @param  string $if_none_match ETag from a previous request. A 304 will be returned if this matches the current ETag (optional)
-     * @param  int $page Which page of results to return (optional, default to 1)
      * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCorporationsCorporationIdCustomsOfficesAsyncWithHttpInfo($corporation_id, $datasource = 'tranquility', $if_none_match = null, $page = '1', $token = null)
+    public function postUiOpenwindowInformationAsyncWithHttpInfo($target_id, $datasource = 'tranquility', $token = null)
     {
-        $returnType = 'object[]';
-        $request = $this->getCorporationsCorporationIdCustomsOfficesRequest($corporation_id, $datasource, $if_none_match, $page, $token);
+        $returnType = '';
+        $request = $this->postUiOpenwindowInformationRequest($target_id, $datasource, $token);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1062,35 +921,25 @@ class PlanetaryInteractionApi
     }
 
     /**
-     * Create request for operation 'getCorporationsCorporationIdCustomsOffices'
+     * Create request for operation 'postUiOpenwindowInformation'
      *
-     * @param  int $corporation_id An EVE corporation ID (required)
+     * @param  int $target_id The target to open (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
-     * @param  string $if_none_match ETag from a previous request. A 304 will be returned if this matches the current ETag (optional)
-     * @param  int $page Which page of results to return (optional, default to 1)
      * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getCorporationsCorporationIdCustomsOfficesRequest($corporation_id, $datasource = 'tranquility', $if_none_match = null, $page = '1', $token = null)
+    protected function postUiOpenwindowInformationRequest($target_id, $datasource = 'tranquility', $token = null)
     {
-        // verify the required parameter 'corporation_id' is set
-        if ($corporation_id === null || (is_array($corporation_id) && count($corporation_id) === 0)) {
+        // verify the required parameter 'target_id' is set
+        if ($target_id === null || (is_array($target_id) && count($target_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $corporation_id when calling getCorporationsCorporationIdCustomsOffices'
+                'Missing the required parameter $target_id when calling postUiOpenwindowInformation'
             );
         }
-        if ($corporation_id < 1) {
-            throw new \InvalidArgumentException('invalid value for "$corporation_id" when calling PlanetaryInteractionApi.getCorporationsCorporationIdCustomsOffices, must be bigger than or equal to 1.');
-        }
 
-        if ($page !== null && $page < 1) {
-            throw new \InvalidArgumentException('invalid value for "$page" when calling PlanetaryInteractionApi.getCorporationsCorporationIdCustomsOffices, must be bigger than or equal to 1.');
-        }
-
-
-        $resourcePath = '/corporations/{corporation_id}/customs_offices/';
+        $resourcePath = '/ui/openwindow/information/';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1102,26 +951,14 @@ class PlanetaryInteractionApi
             $queryParams['datasource'] = ObjectSerializer::toQueryValue($datasource);
         }
         // query params
-        if ($page !== null) {
-            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        if ($target_id !== null) {
+            $queryParams['target_id'] = ObjectSerializer::toQueryValue($target_id);
         }
         // query params
         if ($token !== null) {
             $queryParams['token'] = ObjectSerializer::toQueryValue($token);
         }
-        // header params
-        if ($if_none_match !== null) {
-            $headerParams['If-None-Match'] = ObjectSerializer::toHeaderValue($if_none_match);
-        }
 
-        // path params
-        if ($corporation_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'corporation_id' . '}',
-                ObjectSerializer::toPathValue($corporation_id),
-                $resourcePath
-            );
-        }
 
         // body params
         $_tempBody = null;
@@ -1191,7 +1028,7 @@ class PlanetaryInteractionApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'GET',
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1199,41 +1036,40 @@ class PlanetaryInteractionApi
     }
 
     /**
-     * Operation getUniverseSchematicsSchematicId
+     * Operation postUiOpenwindowMarketdetails
      *
-     * Get schematic information
+     * Open Market Details
      *
-     * @param  int $schematic_id A PI schematic ID (required)
+     * @param  int $type_id The item type to open in market window (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
-     * @param  string $if_none_match ETag from a previous request. A 304 will be returned if this matches the current ETag (optional)
+     * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object
+     * @return void
      */
-    public function getUniverseSchematicsSchematicId($schematic_id, $datasource = 'tranquility', $if_none_match = null)
+    public function postUiOpenwindowMarketdetails($type_id, $datasource = 'tranquility', $token = null)
     {
-        list($response) = $this->getUniverseSchematicsSchematicIdWithHttpInfo($schematic_id, $datasource, $if_none_match);
-        return $response;
+        $this->postUiOpenwindowMarketdetailsWithHttpInfo($type_id, $datasource, $token);
     }
 
     /**
-     * Operation getUniverseSchematicsSchematicIdWithHttpInfo
+     * Operation postUiOpenwindowMarketdetailsWithHttpInfo
      *
-     * Get schematic information
+     * Open Market Details
      *
-     * @param  int $schematic_id A PI schematic ID (required)
+     * @param  int $type_id The item type to open in market window (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
-     * @param  string $if_none_match ETag from a previous request. A 304 will be returned if this matches the current ETag (optional)
+     * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUniverseSchematicsSchematicIdWithHttpInfo($schematic_id, $datasource = 'tranquility', $if_none_match = null)
+    public function postUiOpenwindowMarketdetailsWithHttpInfo($type_id, $datasource = 'tranquility', $token = null)
     {
-        $returnType = 'object';
-        $request = $this->getUniverseSchematicsSchematicIdRequest($schematic_id, $datasource, $if_none_match);
+        $returnType = '';
+        $request = $this->postUiOpenwindowMarketdetailsRequest($type_id, $datasource, $token);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1263,32 +1099,10 @@ class PlanetaryInteractionApi
                 );
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -1297,10 +1111,18 @@ class PlanetaryInteractionApi
                     );
                     $e->setResponseObject($data);
                     break;
-                case 404:
+                case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\Swagger\Client\Model\Unauthorized',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\Forbidden',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1343,20 +1165,20 @@ class PlanetaryInteractionApi
     }
 
     /**
-     * Operation getUniverseSchematicsSchematicIdAsync
+     * Operation postUiOpenwindowMarketdetailsAsync
      *
-     * Get schematic information
+     * Open Market Details
      *
-     * @param  int $schematic_id A PI schematic ID (required)
+     * @param  int $type_id The item type to open in market window (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
-     * @param  string $if_none_match ETag from a previous request. A 304 will be returned if this matches the current ETag (optional)
+     * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUniverseSchematicsSchematicIdAsync($schematic_id, $datasource = 'tranquility', $if_none_match = null)
+    public function postUiOpenwindowMarketdetailsAsync($type_id, $datasource = 'tranquility', $token = null)
     {
-        return $this->getUniverseSchematicsSchematicIdAsyncWithHttpInfo($schematic_id, $datasource, $if_none_match)
+        return $this->postUiOpenwindowMarketdetailsAsyncWithHttpInfo($type_id, $datasource, $token)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1365,41 +1187,27 @@ class PlanetaryInteractionApi
     }
 
     /**
-     * Operation getUniverseSchematicsSchematicIdAsyncWithHttpInfo
+     * Operation postUiOpenwindowMarketdetailsAsyncWithHttpInfo
      *
-     * Get schematic information
+     * Open Market Details
      *
-     * @param  int $schematic_id A PI schematic ID (required)
+     * @param  int $type_id The item type to open in market window (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
-     * @param  string $if_none_match ETag from a previous request. A 304 will be returned if this matches the current ETag (optional)
+     * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUniverseSchematicsSchematicIdAsyncWithHttpInfo($schematic_id, $datasource = 'tranquility', $if_none_match = null)
+    public function postUiOpenwindowMarketdetailsAsyncWithHttpInfo($type_id, $datasource = 'tranquility', $token = null)
     {
-        $returnType = 'object';
-        $request = $this->getUniverseSchematicsSchematicIdRequest($schematic_id, $datasource, $if_none_match);
+        $returnType = '';
+        $request = $this->postUiOpenwindowMarketdetailsRequest($type_id, $datasource, $token);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1419,25 +1227,25 @@ class PlanetaryInteractionApi
     }
 
     /**
-     * Create request for operation 'getUniverseSchematicsSchematicId'
+     * Create request for operation 'postUiOpenwindowMarketdetails'
      *
-     * @param  int $schematic_id A PI schematic ID (required)
+     * @param  int $type_id The item type to open in market window (required)
      * @param  string $datasource The server name you would like data from (optional, default to tranquility)
-     * @param  string $if_none_match ETag from a previous request. A 304 will be returned if this matches the current ETag (optional)
+     * @param  string $token Access token to use if unable to set a header (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getUniverseSchematicsSchematicIdRequest($schematic_id, $datasource = 'tranquility', $if_none_match = null)
+    protected function postUiOpenwindowMarketdetailsRequest($type_id, $datasource = 'tranquility', $token = null)
     {
-        // verify the required parameter 'schematic_id' is set
-        if ($schematic_id === null || (is_array($schematic_id) && count($schematic_id) === 0)) {
+        // verify the required parameter 'type_id' is set
+        if ($type_id === null || (is_array($type_id) && count($type_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $schematic_id when calling getUniverseSchematicsSchematicId'
+                'Missing the required parameter $type_id when calling postUiOpenwindowMarketdetails'
             );
         }
 
-        $resourcePath = '/universe/schematics/{schematic_id}/';
+        $resourcePath = '/ui/openwindow/marketdetails/';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1448,19 +1256,15 @@ class PlanetaryInteractionApi
         if ($datasource !== null) {
             $queryParams['datasource'] = ObjectSerializer::toQueryValue($datasource);
         }
-        // header params
-        if ($if_none_match !== null) {
-            $headerParams['If-None-Match'] = ObjectSerializer::toHeaderValue($if_none_match);
+        // query params
+        if ($token !== null) {
+            $queryParams['token'] = ObjectSerializer::toQueryValue($token);
+        }
+        // query params
+        if ($type_id !== null) {
+            $queryParams['type_id'] = ObjectSerializer::toQueryValue($type_id);
         }
 
-        // path params
-        if ($schematic_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'schematic_id' . '}',
-                ObjectSerializer::toPathValue($schematic_id),
-                $resourcePath
-            );
-        }
 
         // body params
         $_tempBody = null;
@@ -1512,6 +1316,10 @@ class PlanetaryInteractionApi
             }
         }
 
+        // this endpoint requires OAuth (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1526,7 +1334,320 @@ class PlanetaryInteractionApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'GET',
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation postUiOpenwindowNewmail
+     *
+     * Open New Mail Window
+     *
+     * @param  \Swagger\Client\Model\NewMail $new_mail The details of mail to create (required)
+     * @param  string $datasource The server name you would like data from (optional, default to tranquility)
+     * @param  string $token Access token to use if unable to set a header (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function postUiOpenwindowNewmail($new_mail, $datasource = 'tranquility', $token = null)
+    {
+        $this->postUiOpenwindowNewmailWithHttpInfo($new_mail, $datasource, $token);
+    }
+
+    /**
+     * Operation postUiOpenwindowNewmailWithHttpInfo
+     *
+     * Open New Mail Window
+     *
+     * @param  \Swagger\Client\Model\NewMail $new_mail The details of mail to create (required)
+     * @param  string $datasource The server name you would like data from (optional, default to tranquility)
+     * @param  string $token Access token to use if unable to set a header (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postUiOpenwindowNewmailWithHttpInfo($new_mail, $datasource = 'tranquility', $token = null)
+    {
+        $returnType = '';
+        $request = $this->postUiOpenwindowNewmailRequest($new_mail, $datasource, $token);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\BadRequest',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\Unauthorized',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\Forbidden',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 420:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ErrorLimited',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\InternalServerError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ServiceUnavailable',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 504:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\GatewayTimeout',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postUiOpenwindowNewmailAsync
+     *
+     * Open New Mail Window
+     *
+     * @param  \Swagger\Client\Model\NewMail $new_mail The details of mail to create (required)
+     * @param  string $datasource The server name you would like data from (optional, default to tranquility)
+     * @param  string $token Access token to use if unable to set a header (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postUiOpenwindowNewmailAsync($new_mail, $datasource = 'tranquility', $token = null)
+    {
+        return $this->postUiOpenwindowNewmailAsyncWithHttpInfo($new_mail, $datasource, $token)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postUiOpenwindowNewmailAsyncWithHttpInfo
+     *
+     * Open New Mail Window
+     *
+     * @param  \Swagger\Client\Model\NewMail $new_mail The details of mail to create (required)
+     * @param  string $datasource The server name you would like data from (optional, default to tranquility)
+     * @param  string $token Access token to use if unable to set a header (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postUiOpenwindowNewmailAsyncWithHttpInfo($new_mail, $datasource = 'tranquility', $token = null)
+    {
+        $returnType = '';
+        $request = $this->postUiOpenwindowNewmailRequest($new_mail, $datasource, $token);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postUiOpenwindowNewmail'
+     *
+     * @param  \Swagger\Client\Model\NewMail $new_mail The details of mail to create (required)
+     * @param  string $datasource The server name you would like data from (optional, default to tranquility)
+     * @param  string $token Access token to use if unable to set a header (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function postUiOpenwindowNewmailRequest($new_mail, $datasource = 'tranquility', $token = null)
+    {
+        // verify the required parameter 'new_mail' is set
+        if ($new_mail === null || (is_array($new_mail) && count($new_mail) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $new_mail when calling postUiOpenwindowNewmail'
+            );
+        }
+
+        $resourcePath = '/ui/openwindow/newmail/';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($datasource !== null) {
+            $queryParams['datasource'] = ObjectSerializer::toQueryValue($datasource);
+        }
+        // query params
+        if ($token !== null) {
+            $queryParams['token'] = ObjectSerializer::toQueryValue($token);
+        }
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($new_mail)) {
+            $_tempBody = $new_mail;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
