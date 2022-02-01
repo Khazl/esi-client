@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Get character assets
 
-Return a list of the characters assets  --- Alternate route: `/dev/characters/{character_id}/assets/`  Alternate route: `/v5/characters/{character_id}/assets/`  --- This route is cached for up to 3600 seconds
+Return a list of the characters assets  --- Alternate route: `/dev/characters/{character_id}/assets/`  Alternate route: `/v3/characters/{character_id}/assets/`  --- This route is cached for up to 3600 seconds
 
 ### Example
 ```php
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 Get corporation assets
 
-Return a list of the corporation assets  --- Alternate route: `/dev/corporations/{corporation_id}/assets/`  Alternate route: `/v5/corporations/{corporation_id}/assets/`  --- This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
+Return a list of the corporation assets  --- Alternate route: `/dev/corporations/{corporation_id}/assets/`  Alternate route: `/v3/corporations/{corporation_id}/assets/`  --- This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Example
 ```php

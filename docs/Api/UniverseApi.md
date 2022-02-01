@@ -32,7 +32,6 @@ Method | HTTP request | Description
 [**getUniverseSystemsSystemId**](UniverseApi.md#getUniverseSystemsSystemId) | **GET** /universe/systems/{system_id}/ | Get solar system information
 [**getUniverseTypes**](UniverseApi.md#getUniverseTypes) | **GET** /universe/types/ | Get types
 [**getUniverseTypesTypeId**](UniverseApi.md#getUniverseTypesTypeId) | **GET** /universe/types/{type_id}/ | Get type information
-[**postUniverseIds**](UniverseApi.md#postUniverseIds) | **POST** /universe/ids/ | Bulk names to IDs
 [**postUniverseNames**](UniverseApi.md#postUniverseNames) | **POST** /universe/names/ | Get names and categories for a set of IDs
 
 
@@ -41,7 +40,7 @@ Method | HTTP request | Description
 
 Get ancestries
 
-Get all character ancestries  --- Alternate route: `/legacy/universe/ancestries/`  Alternate route: `/v1/universe/ancestries/`  --- This route expires daily at 11:05
+Get all character ancestries  --- Alternate route: `/dev/universe/ancestries/`  Alternate route: `/legacy/universe/ancestries/`  Alternate route: `/v1/universe/ancestries/`  --- This route expires daily at 11:05
 
 ### Example
 ```php
@@ -53,10 +52,10 @@ $apiInstance = new Swagger\Client\Api\UniverseApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$accept_language = "en"; // string | Language to use in the response
+$accept_language = "en-us"; // string | Language to use in the response
 $datasource = "tranquility"; // string | The server name you would like data from
 $if_none_match = "if_none_match_example"; // string | ETag from a previous request. A 304 will be returned if this matches the current ETag
-$language = "en"; // string | Language to use in the response, takes precedence over Accept-Language
+$language = "en-us"; // string | Language to use in the response, takes precedence over Accept-Language
 
 try {
     $result = $apiInstance->getUniverseAncestries($accept_language, $datasource, $if_none_match, $language);
@@ -71,10 +70,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept_language** | **string**| Language to use in the response | [optional] [default to en]
+ **accept_language** | **string**| Language to use in the response | [optional] [default to en-us]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **if_none_match** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | [optional]
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en-us]
 
 ### Return type
 
@@ -96,7 +95,7 @@ No authorization required
 
 Get asteroid belt information
 
-Get information on an asteroid belt  --- Alternate route: `/legacy/universe/asteroid_belts/{asteroid_belt_id}/`  Alternate route: `/v1/universe/asteroid_belts/{asteroid_belt_id}/`  --- This route expires daily at 11:05
+Get information on an asteroid belt  --- Alternate route: `/dev/universe/asteroid_belts/{asteroid_belt_id}/`  Alternate route: `/legacy/universe/asteroid_belts/{asteroid_belt_id}/`  Alternate route: `/v1/universe/asteroid_belts/{asteroid_belt_id}/`  --- This route expires daily at 11:05
 
 ### Example
 ```php
@@ -149,7 +148,7 @@ No authorization required
 
 Get bloodlines
 
-Get a list of bloodlines  --- Alternate route: `/legacy/universe/bloodlines/`  Alternate route: `/v1/universe/bloodlines/`  --- This route expires daily at 11:05
+Get a list of bloodlines  --- Alternate route: `/dev/universe/bloodlines/`  Alternate route: `/legacy/universe/bloodlines/`  Alternate route: `/v1/universe/bloodlines/`  --- This route expires daily at 11:05
 
 ### Example
 ```php
@@ -161,10 +160,10 @@ $apiInstance = new Swagger\Client\Api\UniverseApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$accept_language = "en"; // string | Language to use in the response
+$accept_language = "en-us"; // string | Language to use in the response
 $datasource = "tranquility"; // string | The server name you would like data from
 $if_none_match = "if_none_match_example"; // string | ETag from a previous request. A 304 will be returned if this matches the current ETag
-$language = "en"; // string | Language to use in the response, takes precedence over Accept-Language
+$language = "en-us"; // string | Language to use in the response, takes precedence over Accept-Language
 
 try {
     $result = $apiInstance->getUniverseBloodlines($accept_language, $datasource, $if_none_match, $language);
@@ -179,10 +178,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept_language** | **string**| Language to use in the response | [optional] [default to en]
+ **accept_language** | **string**| Language to use in the response | [optional] [default to en-us]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **if_none_match** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | [optional]
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en-us]
 
 ### Return type
 
@@ -204,7 +203,7 @@ No authorization required
 
 Get item categories
 
-Get a list of item categories  --- Alternate route: `/legacy/universe/categories/`  Alternate route: `/v1/universe/categories/`  --- This route expires daily at 11:05
+Get a list of item categories  --- Alternate route: `/dev/universe/categories/`  Alternate route: `/legacy/universe/categories/`  Alternate route: `/v1/universe/categories/`  --- This route expires daily at 11:05
 
 ### Example
 ```php
@@ -255,7 +254,7 @@ No authorization required
 
 Get item category information
 
-Get information of an item category  --- Alternate route: `/legacy/universe/categories/{category_id}/`  Alternate route: `/v1/universe/categories/{category_id}/`  --- This route expires daily at 11:05
+Get information of an item category  --- Alternate route: `/dev/universe/categories/{category_id}/`  Alternate route: `/legacy/universe/categories/{category_id}/`  Alternate route: `/v1/universe/categories/{category_id}/`  --- This route expires daily at 11:05
 
 ### Example
 ```php
@@ -268,10 +267,10 @@ $apiInstance = new Swagger\Client\Api\UniverseApi(
     new GuzzleHttp\Client()
 );
 $category_id = 56; // int | An Eve item category ID
-$accept_language = "en"; // string | Language to use in the response
+$accept_language = "en-us"; // string | Language to use in the response
 $datasource = "tranquility"; // string | The server name you would like data from
 $if_none_match = "if_none_match_example"; // string | ETag from a previous request. A 304 will be returned if this matches the current ETag
-$language = "en"; // string | Language to use in the response, takes precedence over Accept-Language
+$language = "en-us"; // string | Language to use in the response, takes precedence over Accept-Language
 
 try {
     $result = $apiInstance->getUniverseCategoriesCategoryId($category_id, $accept_language, $datasource, $if_none_match, $language);
@@ -287,10 +286,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **category_id** | **int**| An Eve item category ID |
- **accept_language** | **string**| Language to use in the response | [optional] [default to en]
+ **accept_language** | **string**| Language to use in the response | [optional] [default to en-us]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **if_none_match** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | [optional]
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en-us]
 
 ### Return type
 
@@ -312,7 +311,7 @@ No authorization required
 
 Get constellations
 
-Get a list of constellations  --- Alternate route: `/legacy/universe/constellations/`  Alternate route: `/v1/universe/constellations/`  --- This route expires daily at 11:05
+Get a list of constellations  --- Alternate route: `/dev/universe/constellations/`  Alternate route: `/legacy/universe/constellations/`  Alternate route: `/v1/universe/constellations/`  --- This route expires daily at 11:05
 
 ### Example
 ```php
@@ -363,7 +362,7 @@ No authorization required
 
 Get constellation information
 
-Get information on a constellation  --- Alternate route: `/legacy/universe/constellations/{constellation_id}/`  Alternate route: `/v1/universe/constellations/{constellation_id}/`  --- This route expires daily at 11:05
+Get information on a constellation  --- Alternate route: `/dev/universe/constellations/{constellation_id}/`  Alternate route: `/legacy/universe/constellations/{constellation_id}/`  Alternate route: `/v1/universe/constellations/{constellation_id}/`  --- This route expires daily at 11:05
 
 ### Example
 ```php
@@ -376,10 +375,10 @@ $apiInstance = new Swagger\Client\Api\UniverseApi(
     new GuzzleHttp\Client()
 );
 $constellation_id = 56; // int | constellation_id integer
-$accept_language = "en"; // string | Language to use in the response
+$accept_language = "en-us"; // string | Language to use in the response
 $datasource = "tranquility"; // string | The server name you would like data from
 $if_none_match = "if_none_match_example"; // string | ETag from a previous request. A 304 will be returned if this matches the current ETag
-$language = "en"; // string | Language to use in the response, takes precedence over Accept-Language
+$language = "en-us"; // string | Language to use in the response, takes precedence over Accept-Language
 
 try {
     $result = $apiInstance->getUniverseConstellationsConstellationId($constellation_id, $accept_language, $datasource, $if_none_match, $language);
@@ -395,10 +394,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **constellation_id** | **int**| constellation_id integer |
- **accept_language** | **string**| Language to use in the response | [optional] [default to en]
+ **accept_language** | **string**| Language to use in the response | [optional] [default to en-us]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **if_none_match** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | [optional]
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en-us]
 
 ### Return type
 
@@ -432,10 +431,10 @@ $apiInstance = new Swagger\Client\Api\UniverseApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$accept_language = "en"; // string | Language to use in the response
+$accept_language = "en-us"; // string | Language to use in the response
 $datasource = "tranquility"; // string | The server name you would like data from
 $if_none_match = "if_none_match_example"; // string | ETag from a previous request. A 304 will be returned if this matches the current ETag
-$language = "en"; // string | Language to use in the response, takes precedence over Accept-Language
+$language = "en-us"; // string | Language to use in the response, takes precedence over Accept-Language
 
 try {
     $result = $apiInstance->getUniverseFactions($accept_language, $datasource, $if_none_match, $language);
@@ -450,10 +449,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept_language** | **string**| Language to use in the response | [optional] [default to en]
+ **accept_language** | **string**| Language to use in the response | [optional] [default to en-us]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **if_none_match** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | [optional]
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en-us]
 
 ### Return type
 
@@ -475,7 +474,7 @@ No authorization required
 
 Get graphics
 
-Get a list of graphics  --- Alternate route: `/legacy/universe/graphics/`  Alternate route: `/v1/universe/graphics/`  --- This route expires daily at 11:05
+Get a list of graphics  --- Alternate route: `/dev/universe/graphics/`  Alternate route: `/legacy/universe/graphics/`  Alternate route: `/v1/universe/graphics/`  --- This route expires daily at 11:05
 
 ### Example
 ```php
@@ -579,7 +578,7 @@ No authorization required
 
 Get item groups
 
-Get a list of item groups  --- Alternate route: `/legacy/universe/groups/`  Alternate route: `/v1/universe/groups/`  --- This route expires daily at 11:05
+Get a list of item groups  --- Alternate route: `/dev/universe/groups/`  Alternate route: `/legacy/universe/groups/`  Alternate route: `/v1/universe/groups/`  --- This route expires daily at 11:05
 
 ### Example
 ```php
@@ -645,10 +644,10 @@ $apiInstance = new Swagger\Client\Api\UniverseApi(
     new GuzzleHttp\Client()
 );
 $group_id = 56; // int | An Eve item group ID
-$accept_language = "en"; // string | Language to use in the response
+$accept_language = "en-us"; // string | Language to use in the response
 $datasource = "tranquility"; // string | The server name you would like data from
 $if_none_match = "if_none_match_example"; // string | ETag from a previous request. A 304 will be returned if this matches the current ETag
-$language = "en"; // string | Language to use in the response, takes precedence over Accept-Language
+$language = "en-us"; // string | Language to use in the response, takes precedence over Accept-Language
 
 try {
     $result = $apiInstance->getUniverseGroupsGroupId($group_id, $accept_language, $datasource, $if_none_match, $language);
@@ -664,10 +663,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **int**| An Eve item group ID |
- **accept_language** | **string**| Language to use in the response | [optional] [default to en]
+ **accept_language** | **string**| Language to use in the response | [optional] [default to en-us]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **if_none_match** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | [optional]
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en-us]
 
 ### Return type
 
@@ -689,7 +688,7 @@ No authorization required
 
 Get moon information
 
-Get information on a moon  --- Alternate route: `/legacy/universe/moons/{moon_id}/`  Alternate route: `/v1/universe/moons/{moon_id}/`  --- This route expires daily at 11:05
+Get information on a moon  --- Alternate route: `/dev/universe/moons/{moon_id}/`  Alternate route: `/legacy/universe/moons/{moon_id}/`  Alternate route: `/v1/universe/moons/{moon_id}/`  --- This route expires daily at 11:05
 
 ### Example
 ```php
@@ -742,7 +741,7 @@ No authorization required
 
 Get planet information
 
-Get information on a planet  --- Alternate route: `/legacy/universe/planets/{planet_id}/`  Alternate route: `/v1/universe/planets/{planet_id}/`  --- This route expires daily at 11:05
+Get information on a planet  --- Alternate route: `/dev/universe/planets/{planet_id}/`  Alternate route: `/legacy/universe/planets/{planet_id}/`  Alternate route: `/v1/universe/planets/{planet_id}/`  --- This route expires daily at 11:05
 
 ### Example
 ```php
@@ -807,10 +806,10 @@ $apiInstance = new Swagger\Client\Api\UniverseApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$accept_language = "en"; // string | Language to use in the response
+$accept_language = "en-us"; // string | Language to use in the response
 $datasource = "tranquility"; // string | The server name you would like data from
 $if_none_match = "if_none_match_example"; // string | ETag from a previous request. A 304 will be returned if this matches the current ETag
-$language = "en"; // string | Language to use in the response, takes precedence over Accept-Language
+$language = "en-us"; // string | Language to use in the response, takes precedence over Accept-Language
 
 try {
     $result = $apiInstance->getUniverseRaces($accept_language, $datasource, $if_none_match, $language);
@@ -825,10 +824,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept_language** | **string**| Language to use in the response | [optional] [default to en]
+ **accept_language** | **string**| Language to use in the response | [optional] [default to en-us]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **if_none_match** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | [optional]
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en-us]
 
 ### Return type
 
@@ -850,7 +849,7 @@ No authorization required
 
 Get regions
 
-Get a list of regions  --- Alternate route: `/legacy/universe/regions/`  Alternate route: `/v1/universe/regions/`  --- This route expires daily at 11:05
+Get a list of regions  --- Alternate route: `/dev/universe/regions/`  Alternate route: `/legacy/universe/regions/`  Alternate route: `/v1/universe/regions/`  --- This route expires daily at 11:05
 
 ### Example
 ```php
@@ -901,7 +900,7 @@ No authorization required
 
 Get region information
 
-Get information on a region  --- Alternate route: `/legacy/universe/regions/{region_id}/`  Alternate route: `/v1/universe/regions/{region_id}/`  --- This route expires daily at 11:05
+Get information on a region  --- Alternate route: `/dev/universe/regions/{region_id}/`  Alternate route: `/legacy/universe/regions/{region_id}/`  Alternate route: `/v1/universe/regions/{region_id}/`  --- This route expires daily at 11:05
 
 ### Example
 ```php
@@ -914,10 +913,10 @@ $apiInstance = new Swagger\Client\Api\UniverseApi(
     new GuzzleHttp\Client()
 );
 $region_id = 56; // int | region_id integer
-$accept_language = "en"; // string | Language to use in the response
+$accept_language = "en-us"; // string | Language to use in the response
 $datasource = "tranquility"; // string | The server name you would like data from
 $if_none_match = "if_none_match_example"; // string | ETag from a previous request. A 304 will be returned if this matches the current ETag
-$language = "en"; // string | Language to use in the response, takes precedence over Accept-Language
+$language = "en-us"; // string | Language to use in the response, takes precedence over Accept-Language
 
 try {
     $result = $apiInstance->getUniverseRegionsRegionId($region_id, $accept_language, $datasource, $if_none_match, $language);
@@ -933,10 +932,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **region_id** | **int**| region_id integer |
- **accept_language** | **string**| Language to use in the response | [optional] [default to en]
+ **accept_language** | **string**| Language to use in the response | [optional] [default to en-us]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **if_none_match** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | [optional]
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en-us]
 
 ### Return type
 
@@ -958,7 +957,7 @@ No authorization required
 
 Get stargate information
 
-Get information on a stargate  --- Alternate route: `/legacy/universe/stargates/{stargate_id}/`  Alternate route: `/v1/universe/stargates/{stargate_id}/`  --- This route expires daily at 11:05
+Get information on a stargate  --- Alternate route: `/dev/universe/stargates/{stargate_id}/`  Alternate route: `/legacy/universe/stargates/{stargate_id}/`  Alternate route: `/v1/universe/stargates/{stargate_id}/`  --- This route expires daily at 11:05
 
 ### Example
 ```php
@@ -1011,7 +1010,7 @@ No authorization required
 
 Get star information
 
-Get information on a star  --- Alternate route: `/legacy/universe/stars/{star_id}/`  Alternate route: `/v1/universe/stars/{star_id}/`  --- This route expires daily at 11:05
+Get information on a star  --- Alternate route: `/dev/universe/stars/{star_id}/`  Alternate route: `/legacy/universe/stars/{star_id}/`  Alternate route: `/v1/universe/stars/{star_id}/`  --- This route expires daily at 11:05
 
 ### Example
 ```php
@@ -1170,7 +1169,7 @@ No authorization required
 
 Get structure information
 
-Returns information on requested structure if you are on the ACL. Otherwise, returns \"Forbidden\" for all inputs.  --- Alternate route: `/v2/universe/structures/{structure_id}/`  --- This route is cached for up to 3600 seconds
+Returns information on requested structure if you are on the ACL. Otherwise, returns \"Forbidden\" for all inputs.  --- Alternate route: `/dev/universe/structures/{structure_id}/`  Alternate route: `/v2/universe/structures/{structure_id}/`  --- This route is cached for up to 3600 seconds
 
 ### Example
 ```php
@@ -1229,7 +1228,7 @@ Name | Type | Description  | Notes
 
 Get system jumps
 
-Get the number of jumps in solar systems within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with jumps will be listed  --- Alternate route: `/legacy/universe/system_jumps/`  Alternate route: `/v1/universe/system_jumps/`  --- This route is cached for up to 3600 seconds
+Get the number of jumps in solar systems within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with jumps will be listed  --- Alternate route: `/dev/universe/system_jumps/`  Alternate route: `/legacy/universe/system_jumps/`  Alternate route: `/v1/universe/system_jumps/`  --- This route is cached for up to 3600 seconds
 
 ### Example
 ```php
@@ -1280,7 +1279,7 @@ No authorization required
 
 Get system kills
 
-Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with kills will be listed  --- Alternate route: `/v2/universe/system_kills/`  --- This route is cached for up to 3600 seconds
+Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with kills will be listed  --- Alternate route: `/dev/universe/system_kills/`  Alternate route: `/v2/universe/system_kills/`  --- This route is cached for up to 3600 seconds
 
 ### Example
 ```php
@@ -1395,10 +1394,10 @@ $apiInstance = new Swagger\Client\Api\UniverseApi(
     new GuzzleHttp\Client()
 );
 $system_id = 56; // int | system_id integer
-$accept_language = "en"; // string | Language to use in the response
+$accept_language = "en-us"; // string | Language to use in the response
 $datasource = "tranquility"; // string | The server name you would like data from
 $if_none_match = "if_none_match_example"; // string | ETag from a previous request. A 304 will be returned if this matches the current ETag
-$language = "en"; // string | Language to use in the response, takes precedence over Accept-Language
+$language = "en-us"; // string | Language to use in the response, takes precedence over Accept-Language
 
 try {
     $result = $apiInstance->getUniverseSystemsSystemId($system_id, $accept_language, $datasource, $if_none_match, $language);
@@ -1414,10 +1413,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **system_id** | **int**| system_id integer |
- **accept_language** | **string**| Language to use in the response | [optional] [default to en]
+ **accept_language** | **string**| Language to use in the response | [optional] [default to en-us]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **if_none_match** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | [optional]
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en-us]
 
 ### Return type
 
@@ -1439,7 +1438,7 @@ No authorization required
 
 Get types
 
-Get a list of type ids  --- Alternate route: `/legacy/universe/types/`  Alternate route: `/v1/universe/types/`  --- This route expires daily at 11:05
+Get a list of type ids  --- Alternate route: `/dev/universe/types/`  Alternate route: `/legacy/universe/types/`  Alternate route: `/v1/universe/types/`  --- This route expires daily at 11:05
 
 ### Example
 ```php
@@ -1505,10 +1504,10 @@ $apiInstance = new Swagger\Client\Api\UniverseApi(
     new GuzzleHttp\Client()
 );
 $type_id = 56; // int | An Eve item type ID
-$accept_language = "en"; // string | Language to use in the response
+$accept_language = "en-us"; // string | Language to use in the response
 $datasource = "tranquility"; // string | The server name you would like data from
 $if_none_match = "if_none_match_example"; // string | ETag from a previous request. A 304 will be returned if this matches the current ETag
-$language = "en"; // string | Language to use in the response, takes precedence over Accept-Language
+$language = "en-us"; // string | Language to use in the response, takes precedence over Accept-Language
 
 try {
     $result = $apiInstance->getUniverseTypesTypeId($type_id, $accept_language, $datasource, $if_none_match, $language);
@@ -1524,65 +1523,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type_id** | **int**| An Eve item type ID |
- **accept_language** | **string**| Language to use in the response | [optional] [default to en]
+ **accept_language** | **string**| Language to use in the response | [optional] [default to en-us]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
  **if_none_match** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | [optional]
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en]
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **postUniverseIds**
-> object postUniverseIds($names, $accept_language, $datasource, $language)
-
-Bulk names to IDs
-
-Resolve a set of names to IDs in the following categories: agents, alliances, characters, constellations, corporations factions, inventory_types, regions, stations, and systems. Only exact matches will be returned. All names searched for are cached for 12 hours  --- Alternate route: `/dev/universe/ids/`  Alternate route: `/legacy/universe/ids/`  Alternate route: `/v1/universe/ids/`
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$apiInstance = new Swagger\Client\Api\UniverseApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$names = array(new \Swagger\Client\Model\string[]()); // string[] | The names to resolve
-$accept_language = "en"; // string | Language to use in the response
-$datasource = "tranquility"; // string | The server name you would like data from
-$language = "en"; // string | Language to use in the response, takes precedence over Accept-Language
-
-try {
-    $result = $apiInstance->postUniverseIds($names, $accept_language, $datasource, $language);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling UniverseApi->postUniverseIds: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **names** | **string[]**| The names to resolve |
- **accept_language** | **string**| Language to use in the response | [optional] [default to en]
- **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [optional] [default to en-us]
 
 ### Return type
 
