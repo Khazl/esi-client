@@ -39,5 +39,6 @@
       "EsiClient\\Test\\": "test/"
     }
   },
-  "name": "khazl/esi-client"
+  "name": "khazl/esi-client",
+  "version": "0.1.1"
 }

@@ -29,6 +29,16 @@ COMPOSER_FILE="${OUTPUT_DIR}/composer.json"
 if [ -f "$COMPOSER_FILE" ]; then
     echo "Patching composer.json with correct package name..."
     jq '.name = "khazl/esi-client"' "$COMPOSER_FILE" > "${COMPOSER_FILE}.tmp" && mv "${COMPOSER_FILE}.tmp" "$COMPOSER_FILE"
+
+    echo "Bumping version in composer.json..."
+    CURRENT_VERSION=$(jq -r '.version // "0.1.0"' "$COMPOSER_FILE")
+    IFS='.' read -r major minor patch <<< "$CURRENT_VERSION"
+    patch=$((patch + 1))
+    NEW_VERSION="${major}.${minor}.${patch}"
+    jq --arg name "khazl/esi-client" --arg version "$NEW_VERSION" \
+        '.name = $name | .version = $version' \
+        "$COMPOSER_FILE" > "${COMPOSER_FILE}.tmp" && mv "${COMPOSER_FILE}.tmp" "$COMPOSER_FILE"
+    echo "Updated version to $NEW_VERSION"
 fi
 
 echo "EVE ESI client generation completed."
